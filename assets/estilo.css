@@ -1,0 +1,81 @@
+
+body {
+    background-color: #1c2526;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 20px;
+}
+
+#titulo {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.5em;
+    color: #d4d4d4;
+    margin-bottom: 30px;
+}
+
+#subtitulo-map, #subtitulo-anuncios, #subtitulo-total-price, #subtitulo-reviews-room-type{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.0em;
+    color: #d4d4d4;
+    margin-bottom: 30px;
+}
+
+label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1em;
+    color: #e0e0e0;
+    margin-bottom: 10px;
+    display: block;
+}
+
+#region-filter, #room-filter {
+    margin-bottom: 20px;
+}
+#region-filter .Select-control, #room-filter .Select-control {
+    background-color: #2e2e2e;
+    border: 1px solid #4a4a4a;
+}
+#region-filter .Select-value, #room-filter .Select-value {
+    background-color: #d4d4d4 !important;
+    color: #1c2526 !important;
+    border-radius: 5px;
+}
+#region-filter .Select-value-label, #room-filter .Select-value-label {
+    color: #1c2526 !important;
+}
+#region-filter .Select-placeholder, #room-filter .Select-placeholder,
+#region-filter .Select-input, #room-filter .Select-input {
+    color: #e0e0e0 !important;
+}
+#region-filter .Select-menu-outer, #room-filter .Select-menu-outer {
+    background-color: #2e2e2e;
+    border: 1px solid #4a4a4a;
+}
+#region-filter .Select-option, #room-filter .Select-option {
+    background-color: #2e2e2e;
+    color: #e0e0e0;
+}
+#region-filter .Select-option:hover, #room-filter .Select-option:hover {
+    background-color: #4a4a4a;
+}
+
+#price-slider, #reviews-slider {
+    margin-bottom: 20px;
+    color: #e0e0e0;
+}
+#price-slider .rc-slider-track, #reviews-slider .rc-slider-track {
+    background-color: #4a4a4a;
+}
+#price-slider .rc-slider-handle, #reviews-slider .rc-slider-handle {
+    border: 2px solid #d4d4d4;
+    background-color: #1c2526;
+}
+#price-slider .rc-slider-rail, #reviews-slider .rc-slider-rail {
+    background-color: #2e2e2e;
+}
+#price-slider .rc-slider-mark-text, #reviews-slider .rc-slider-mark-text {
+    color: #e0e0e0;
+}
