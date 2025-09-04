@@ -5,16 +5,12 @@
 
 # In[ ]:
 
-
 #Importação das variáveis
-
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import dash
 from dash import Dash, dcc, html, Input, Output
-from scipy.stats import skew, kurtosis
-
 import os
 print("Diretório atual:", os.getcwd())
 
@@ -43,7 +39,6 @@ df['listings_count'] = df.groupby('neighbourhood_group')['id'].transform('count'
 df['availability_365'] = df['availability_365'].clip(lower=0, upper=365)
 df['occupied_days'] = (365 - df['availability_365']).clip(lower=0, upper=365)
 
-
 df['last_review_year'] = df['last_review'].dt.year
 anos_com_reviews = sorted([int(year) for year in df['last_review_year'].unique()])
 
@@ -55,7 +50,6 @@ quantitative_columns = [
 app = Dash(__name__, suppress_callback_exceptions=True)
 
 server = app.server
-
 
 region_options = [{'label': reg, 'value': reg} for reg in df['neighbourhood_group'].unique()]
 room_options = [{'label': room, 'value': room} for room in df['room_type'].unique()]
@@ -637,17 +631,10 @@ def update_stats(mean_clicks, mode_clicks, median_clicks, skew_clicks, kurtosis_
             result.append(f"{col}: {median_value:.2f}\n")
 
     elif button_id == 'skew-button':
-        result.append("Assimetria das colunas quantitativas:\n")
-        for col in quantitative_columns:
-            skew_value = skew(filtered_df[col].dropna())
-            result.append(f"{col}: {skew_value:.2f}\n")
+        result.append("Assimetria não disponível (requer biblioteca adicional).\n")
 
     elif button_id == 'kurtosis-button':
-        result.append("Curtose das colunas quantitativas:\n")
-        for col in quantitative_columns:
-            kurtosis_value = kurtosis(filtered_df[col].dropna())
-            result.append(f"{col}: {kurtosis_value:.2f}\n")
-
+        result.append("Curtose não disponível (requer biblioteca adicional).\n")
 
     elif button_id == 'quartiles-button':
         result.append("Quartis das colunas quantitativas:\n")
@@ -1133,7 +1120,6 @@ def update_reviews_line_chart(selected_regions, selected_rooms, price_range, rev
     if filtered_df.empty:
         return create_empty_graph()
 
-
     if year_range is None or len(year_range) != 2:
         year_range = [min(anos_com_reviews), max(anos_com_reviews)]
     else:
@@ -1198,4 +1184,3 @@ if __name__ == '__main__':
     app.run(debug=True)
     
 print("Acesse o dashboard em: http://127.0.0.1:8050")
-
