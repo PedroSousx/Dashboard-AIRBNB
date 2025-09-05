@@ -3,6 +3,5 @@ services:
     name: dashboard-airbnb
     env: python
     plan: free
-    pythonVersion: "3.10.10"
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn wsgi:server
